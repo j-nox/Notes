@@ -16,6 +16,11 @@
 		9234AA2B28F5D02400693C5F /* EditNoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA2A28F5D02400693C5F /* EditNoteScreen.swift */; };
 		9234AA2D28F5D04500693C5F /* NoteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA2C28F5D04500693C5F /* NoteScreen.swift */; };
 		9234AA2F28F5D09100693C5F /* TagsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA2E28F5D09100693C5F /* TagsScreen.swift */; };
+		9234AA3128F5D3A500693C5F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3028F5D3A500693C5F /* MainViewModel.swift */; };
+		9234AA3328F5D3C200693C5F /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3228F5D3C200693C5F /* AddNoteViewModel.swift */; };
+		9234AA3528F5D41C00693C5F /* EditNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3428F5D41C00693C5F /* EditNoteViewModel.swift */; };
+		9234AA3728F5D43C00693C5F /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3628F5D43C00693C5F /* NoteViewModel.swift */; };
+		9234AA3928F5D47E00693C5F /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3828F5D47E00693C5F /* TagsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		9234AA2A28F5D02400693C5F /* EditNoteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteScreen.swift; sourceTree = "<group>"; };
 		9234AA2C28F5D04500693C5F /* NoteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteScreen.swift; sourceTree = "<group>"; };
 		9234AA2E28F5D09100693C5F /* TagsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsScreen.swift; sourceTree = "<group>"; };
+		9234AA3028F5D3A500693C5F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9234AA3228F5D3C200693C5F /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
+		9234AA3428F5D41C00693C5F /* EditNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewModel.swift; sourceTree = "<group>"; };
+		9234AA3628F5D43C00693C5F /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		9234AA3828F5D47E00693C5F /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				9226AFB428F482E100C5D580 /* ContentView.swift */,
-				9234AA2628F5CEDA00693C5F /* MainScreen.swift */,
-				9234AA2828F5CFFA00693C5F /* AddNoteScreen.swift */,
-				9234AA2A28F5D02400693C5F /* EditNoteScreen.swift */,
-				9234AA2C28F5D04500693C5F /* NoteScreen.swift */,
-				9234AA2E28F5D09100693C5F /* TagsScreen.swift */,
+				9234AA3A28F5D4B500693C5F /* Main */,
+				9234AA3B28F5D4BF00693C5F /* Notes */,
+				9234AA3C28F5D4D800693C5F /* Tags */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -128,6 +136,37 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		9234AA3A28F5D4B500693C5F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9234AA2628F5CEDA00693C5F /* MainScreen.swift */,
+				9234AA3028F5D3A500693C5F /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9234AA3B28F5D4BF00693C5F /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				9234AA2828F5CFFA00693C5F /* AddNoteScreen.swift */,
+				9234AA3228F5D3C200693C5F /* AddNoteViewModel.swift */,
+				9234AA2A28F5D02400693C5F /* EditNoteScreen.swift */,
+				9234AA3428F5D41C00693C5F /* EditNoteViewModel.swift */,
+				9234AA2C28F5D04500693C5F /* NoteScreen.swift */,
+				9234AA3628F5D43C00693C5F /* NoteViewModel.swift */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		9234AA3C28F5D4D800693C5F /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				9234AA2E28F5D09100693C5F /* TagsScreen.swift */,
+				9234AA3828F5D47E00693C5F /* TagsViewModel.swift */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,12 +240,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9234AA2728F5CEDA00693C5F /* MainScreen.swift in Sources */,
+				9234AA3928F5D47E00693C5F /* TagsViewModel.swift in Sources */,
 				9234AA2F28F5D09100693C5F /* TagsScreen.swift in Sources */,
+				9234AA3728F5D43C00693C5F /* NoteViewModel.swift in Sources */,
 				9234AA2928F5CFFA00693C5F /* AddNoteScreen.swift in Sources */,
+				9234AA3328F5D3C200693C5F /* AddNoteViewModel.swift in Sources */,
 				9234AA2B28F5D02400693C5F /* EditNoteScreen.swift in Sources */,
 				9226AFB528F482E100C5D580 /* ContentView.swift in Sources */,
+				9234AA3528F5D41C00693C5F /* EditNoteViewModel.swift in Sources */,
 				9226AFB328F482E100C5D580 /* NotesApp.swift in Sources */,
 				9234AA2D28F5D04500693C5F /* NoteScreen.swift in Sources */,
+				9234AA3128F5D3A500693C5F /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
