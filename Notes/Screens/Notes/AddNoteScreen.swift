@@ -1,7 +1,21 @@
 import SwiftUI
 
 struct AddNoteScreen: View {
+  @State var content: String = ""
+  @Binding var notes: [Note]
+  
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+    VStack {
+      
+      TextField("Content of note", text: $content)
+      
+      Button {
+        notes.append(Note(content: content))
+      } label: {
+        Text("Create")
+      }
+
+    }
   }
 }
