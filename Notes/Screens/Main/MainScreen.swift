@@ -2,8 +2,7 @@ import SwiftUI
 
 struct MainScreen: View {
   @State var createSheetStatus: Bool = false
-  
-  var notes: [Note] = [Note(content: "Note content"), Note(content: "Note two")]
+  @State var notes: [Note] = [Note(content: "Note content"), Note(content: "Note two")]
   
   var body: some View {
     VStack {
@@ -22,7 +21,7 @@ struct MainScreen: View {
     }
     
     .sheet(isPresented: $createSheetStatus) {
-      Text("Stub")
+      AddNoteScreen(notes: $notes)
     }
   }
   
