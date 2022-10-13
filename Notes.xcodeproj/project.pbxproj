@@ -21,6 +21,7 @@
 		9234AA3528F5D41C00693C5F /* EditNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3428F5D41C00693C5F /* EditNoteViewModel.swift */; };
 		9234AA3728F5D43C00693C5F /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3628F5D43C00693C5F /* NoteViewModel.swift */; };
 		9234AA3928F5D47E00693C5F /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3828F5D47E00693C5F /* TagsViewModel.swift */; };
+		925A303728F8559B006B4BD0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925A303628F8559B006B4BD0 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		9234AA3428F5D41C00693C5F /* EditNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewModel.swift; sourceTree = "<group>"; };
 		9234AA3628F5D43C00693C5F /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		9234AA3828F5D47E00693C5F /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
+		925A303628F8559B006B4BD0 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		9226AFC328F4835C00C5D580 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				925A303628F8559B006B4BD0 /* Note.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				9234AA2F28F5D09100693C5F /* TagsScreen.swift in Sources */,
 				9234AA3728F5D43C00693C5F /* NoteViewModel.swift in Sources */,
 				9234AA2928F5CFFA00693C5F /* AddNoteScreen.swift in Sources */,
+				925A303728F8559B006B4BD0 /* Note.swift in Sources */,
 				9234AA3328F5D3C200693C5F /* AddNoteViewModel.swift in Sources */,
 				9234AA2B28F5D02400693C5F /* EditNoteScreen.swift in Sources */,
 				9226AFB528F482E100C5D580 /* ContentView.swift in Sources */,

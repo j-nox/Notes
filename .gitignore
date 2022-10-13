@@ -74,3 +74,4 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
+Notes.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
