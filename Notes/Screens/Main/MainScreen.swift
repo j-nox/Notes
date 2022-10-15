@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MainScreen: View {
   @State var createSheetStatus: Bool = false
+  @State var editSheetStatus: Bool = false
   @State var notes: [Note] = [Note(content: "Note content"), Note(content: "Note two")]
   
   var body: some View {
@@ -15,7 +16,11 @@ struct MainScreen: View {
       
       ScrollView {
         ForEach(notes) { note in
-          Text(note.content)
+          NavigationLink {
+            EditNoteScreen(note: note, notes: $notes)
+          } label: {
+            Text(note.content)
+          }
         }
       }
     }
