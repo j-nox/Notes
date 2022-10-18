@@ -22,6 +22,10 @@
 		9234AA3728F5D43C00693C5F /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3628F5D43C00693C5F /* NoteViewModel.swift */; };
 		9234AA3928F5D47E00693C5F /* TagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9234AA3828F5D47E00693C5F /* TagsViewModel.swift */; };
 		925A303728F8559B006B4BD0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925A303628F8559B006B4BD0 /* Note.swift */; };
+		92944D4F28FD9ED60071E12A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92944D4E28FD9ED60071E12A /* PersistenceManager.swift */; };
+		92944D5128FDA0870071E12A /* NoteModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92944D5028FDA0870071E12A /* NoteModelObject.swift */; };
+		92944D5428FDA0F40071E12A /* DataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92944D5228FDA0F40071E12A /* DataBase.xcdatamodeld */; };
+		92944D5728FDAF3A0071E12A /* DataBaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92944D5628FDAF3A0071E12A /* DataBaseErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		9234AA3628F5D43C00693C5F /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		9234AA3828F5D47E00693C5F /* TagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewModel.swift; sourceTree = "<group>"; };
 		925A303628F8559B006B4BD0 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		92944D4E28FD9ED60071E12A /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		92944D5028FDA0870071E12A /* NoteModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModelObject.swift; sourceTree = "<group>"; };
+		92944D5328FDA0F40071E12A /* DataBase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataBase.xcdatamodel; sourceTree = "<group>"; };
+		92944D5628FDAF3A0071E12A /* DataBaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,7 @@
 		9226AFB128F482E100C5D580 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				92944D5528FDAEF30071E12A /* Errors */,
 				9226AFC328F4835C00C5D580 /* Models */,
 				9226AFC428F4836B00C5D580 /* Persistence */,
 				9226AFC128F4833F00C5D580 /* Resources */,
@@ -130,6 +139,9 @@
 		9226AFC428F4836B00C5D580 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				92944D4E28FD9ED60071E12A /* PersistenceManager.swift */,
+				92944D5028FDA0870071E12A /* NoteModelObject.swift */,
+				92944D5228FDA0F40071E12A /* DataBase.xcdatamodeld */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -170,6 +182,14 @@
 				9234AA3828F5D47E00693C5F /* TagsViewModel.swift */,
 			);
 			path = Tags;
+			sourceTree = "<group>";
+		};
+		92944D5528FDAEF30071E12A /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				92944D5628FDAF3A0071E12A /* DataBaseErrors.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +262,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92944D5128FDA0870071E12A /* NoteModelObject.swift in Sources */,
 				9234AA2728F5CEDA00693C5F /* MainScreen.swift in Sources */,
+				92944D5428FDA0F40071E12A /* DataBase.xcdatamodeld in Sources */,
+				92944D4F28FD9ED60071E12A /* PersistenceManager.swift in Sources */,
 				9234AA3928F5D47E00693C5F /* TagsViewModel.swift in Sources */,
+				92944D5728FDAF3A0071E12A /* DataBaseErrors.swift in Sources */,
 				9234AA2F28F5D09100693C5F /* TagsScreen.swift in Sources */,
 				9234AA3728F5D43C00693C5F /* NoteViewModel.swift in Sources */,
 				9234AA2928F5CFFA00693C5F /* AddNoteScreen.swift in Sources */,
@@ -459,6 +483,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92944D5228FDA0F40071E12A /* DataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92944D5328FDA0F40071E12A /* DataBase.xcdatamodel */,
+			);
+			currentVersion = 92944D5328FDA0F40071E12A /* DataBase.xcdatamodel */;
+			path = DataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9226AFA728F482E100C5D580 /* Project object */;
 }

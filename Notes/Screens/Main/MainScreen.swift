@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct MainScreen: View {
+  @StateObject var viewModel: MainViewModel = MainViewModel()
   @State var createSheetStatus: Bool = false
   @State var editSheetStatus: Bool = false
-  @State var notes: [Note] = [Note(content: "Note content"), Note(content: "Note two")]
   
   var body: some View {
     VStack {
@@ -15,9 +15,9 @@ struct MainScreen: View {
       .padding()
       
       ScrollView {
-        ForEach(notes) { note in
+        ForEach(viewModel.notes) { note in
           NavigationLink {
-            EditNoteScreen(note: note, notes: $notes)
+            EditNoteScreen(note: note, notes: $viewModel.notes)
           } label: {
             Text(note.content)
           }
@@ -26,7 +26,7 @@ struct MainScreen: View {
     }
     
     .sheet(isPresented: $createSheetStatus) {
-      AddNoteScreen(notes: $notes)
+      AddNoteScreen(notes: $viewModel.notes)
     }
   }
   
