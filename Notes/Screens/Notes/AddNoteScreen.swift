@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AddNoteScreen: View {
+  @StateObject var viewModel: AddNoteViewModel = AddNoteViewModel()
   @State var content: String = ""
   @Binding var notes: [Note]
   
@@ -11,7 +12,8 @@ struct AddNoteScreen: View {
       TextField("Content of note", text: $content)
       
       Button {
-        notes.append(Note(content: content))
+        viewModel.note = Note(content: content)
+        viewModel.createNote()
       } label: {
         Text("Create")
       }
