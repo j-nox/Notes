@@ -25,7 +25,9 @@ class MainViewModel: ObservableObject {
         let notesFromCoreData: [NoteModelObject] = try PersistenceManager.shared.readAllNotes()
         
         for note in notesFromCoreData {
-          self.notes.append(Note(content: note.content))
+          if note.id != nil {
+            self.notes.append(Note(id: note.id!, content: note.content))
+          }
         }
       } catch {
         print("Erorr words loading from Core Data")

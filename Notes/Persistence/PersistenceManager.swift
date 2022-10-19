@@ -35,6 +35,7 @@ final class PersistenceManager {
     
     let newEntity = NoteModelObject(context: container.viewContext)
     
+    newEntity.id = UUID()
     newEntity.content = receivedContent.content
     
     do {
@@ -42,6 +43,26 @@ final class PersistenceManager {
     } catch {
       print("Error: \(error)")
     }
+  }
+  
+  func updateNote(note: Note) throws {
+    
+    let request = NSFetchRequest<NoteModelObject>(entityName: "NoteModelObject")
+    
+    let idPredicate = NSPredicate(format: "id == %@", note.id as CVarArg)
+    request.predicate = idPredicate
+    request.fetchLimit = 1
+    
+    do {
+      let noteForUpdate: NoteModelObject? = try container.viewContext.fetch(request).first
+      if noteForUpdate != nil {
+        noteForUpdate?.content = note.content
+        try container.viewContext.save()
+      }
+    } catch {
+      throw DataBaseErrors.badFetchRequest
+    }
+    
   }
   
 }
