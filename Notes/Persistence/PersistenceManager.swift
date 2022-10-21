@@ -11,11 +11,9 @@ final class PersistenceManager {
     container = NSPersistentContainer(name: "DataBase")
     
     container.loadPersistentStores { description, error in
-      
       if let receivedError = error {
         fatalError("Error: \(receivedError.localizedDescription)")
       }
-      
       print(description.url as Any)
     }
   }
@@ -36,6 +34,7 @@ final class PersistenceManager {
     let newEntity = NoteModelObject(context: container.viewContext)
     
     newEntity.id = UUID()
+    
     newEntity.content = receivedContent.content
     
     do {
@@ -50,19 +49,51 @@ final class PersistenceManager {
     let request = NSFetchRequest<NoteModelObject>(entityName: "NoteModelObject")
     
     let idPredicate = NSPredicate(format: "id == %@", note.id as CVarArg)
+    
     request.predicate = idPredicate
+    
     request.fetchLimit = 1
     
     do {
+      
       let noteForUpdate: NoteModelObject? = try container.viewContext.fetch(request).first
+      
       if noteForUpdate != nil {
+  
         noteForUpdate?.content = note.content
+        
         try container.viewContext.save()
       }
+      
     } catch {
       throw DataBaseErrors.badFetchRequest
     }
     
+  }
+  
+  func deleteNote(note: Note) throws {
+    
+    let request = NSFetchRequest<NoteModelObject>(entityName: "NoteModelObject")
+    
+    let idPredicate = NSPredicate(format: "id == %@", note.id as CVarArg)
+    
+    request.predicate = idPredicate
+    
+    request.fetchLimit = 1
+    
+    if let result = try? container.viewContext.fetch(request) {
+          
+      for object in result {
+        container.viewContext.delete(object)
+      }
+      
+    }
+    
+    do {
+      try container.viewContext.save()
+    } catch {
+      print("Error: \(error)")
+    }
   }
   
 }

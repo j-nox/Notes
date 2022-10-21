@@ -23,11 +23,15 @@ struct MainScreen: View {
           }
         }
       }
+      .onAppear() {
+        viewModel.getAllNotes()
+      }
     }
     
-    .sheet(isPresented: $createSheetStatus) {
+    .sheet(isPresented: $createSheetStatus, onDismiss: {
+      viewModel.getAllNotes()
+    }) {
       AddNoteScreen(notes: $viewModel.notes)
     }
   }
-  
 }

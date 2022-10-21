@@ -1,47 +1,41 @@
 import CoreData
 import SwiftUI
 
-/// ViewModel основного экрана
 class MainViewModel: ObservableObject {
   
-  
-  // MARK: - Parameters
-  
-  /// Список слов для отображения
-  @Published var notes: [Note]      = []
-  
-  // MARK: - Initializers
+  @Published var notes: [Note] = []
   
   init() {
-    
     if isItFirstRun() {
-      
       createFirstNote()
-      
     } else {
-      
-      do {
-        
-        let notesFromCoreData: [NoteModelObject] = try PersistenceManager.shared.readAllNotes()
-        
-        for note in notesFromCoreData {
-          if note.id != nil {
-            self.notes.append(Note(id: note.id!, content: note.content))
-          }
-        }
-      } catch {
-        print("Erorr words loading from Core Data")
-      }
-      
+      getAllNotes()
     }
   }
   
   // MARK: - Methods
   
+  func getAllNotes() {
+    do {
+      
+      notes = []
+      
+      let notesFromCoreData: [NoteModelObject] = try PersistenceManager.shared.readAllNotes()
+      
+      for note in notesFromCoreData {
+        self.notes.append(Note(id: note.id ?? UUID(), content: note.content))
+      }
+      
+    } catch {
+      print("Erorr words loading from Core Data")
+    }
+  }
+  
   func createFirstNote() {
-    let firstNote: Note = Note(content: "First Note")
-    PersistenceManager.shared.createNote(receivedContent: firstNote)
     
+    let firstNote: Note = Note(id: UUID(), content: "First Note")
+    
+    PersistenceManager.shared.createNote(receivedContent: firstNote)
   }
   
   // MARK: - Helpers
