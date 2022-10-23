@@ -2,6 +2,8 @@ import SwiftUI
 
 struct AddNoteScreen: View {
   
+  @Environment(\.dismiss) var dismiss
+
   @StateObject var viewModel: AddNoteViewModel = AddNoteViewModel()
   
   @State var content: String                   = ""
@@ -17,6 +19,7 @@ struct AddNoteScreen: View {
         viewModel.note = Note(content: content)
         
         viewModel.createNote()
+        dismiss()
       } label: {
         Text("Create")
       }
