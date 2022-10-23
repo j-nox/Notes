@@ -2,6 +2,8 @@ import SwiftUI
 
 struct EditNoteScreen: View {
   
+  @Environment(\.dismiss) var dismiss
+  
   @StateObject var viewModel: EditNoteViewModel = EditNoteViewModel()
   
   @State var note: Note
@@ -17,6 +19,7 @@ struct EditNoteScreen: View {
         viewModel.note = note
         
         viewModel.updateNote()
+        dismiss()
       } label: {
         Text("Save")
       }
@@ -26,6 +29,7 @@ struct EditNoteScreen: View {
         viewModel.note = note
         
         viewModel.deleteNote()
+        dismiss()
       } label: {
         Text("Delete")
       }
